@@ -9,5 +9,5 @@ xmlRootElement {name = "catalog";}
 xmlAccessorType(\IxmlAccessType.field)
 shared class Catalog(catalog) {
 
-    shared variable xmlElement {name="book";} List<Book> catalog;
+    shared xmlElement {name="book";} List<Book> catalog;
 }

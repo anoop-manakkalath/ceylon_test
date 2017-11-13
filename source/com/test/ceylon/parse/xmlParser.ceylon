@@ -9,6 +9,6 @@ shared void run() {
     value unmarshaller = jc.createUnmarshaller();
     value books = unmarshaller.unmarshal(File("resource/books.xml"));
     if (is Catalog books) {
-        books.catalog.map((it) => it.title + " by " + it.author).each((name) => print(name));
+        books.catalog.map((it) => "``it.title`` by ``it.author``").each(print);
     }
 }

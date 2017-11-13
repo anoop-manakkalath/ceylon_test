@@ -37,8 +37,7 @@ shared String fileIORead(String file) {
     try (BufferedReader br = Files.newBufferedReader(Paths.get(file), charset)) {
         while (true) {
             String? line = br.readLine();
-            switch (line)
-            case (is String) {
+            if (is String line) {
                 content.append(line).append(newLine);
             }
             else {
@@ -46,7 +45,7 @@ shared String fileIORead(String file) {
             }
         }
     }
-    return content.string;
+    return content.string.trimmed;
 }
 
 shared String fileNIORead(String file) {
@@ -68,5 +67,5 @@ shared String fileNewRead(String file) {
     value content = StringBuilder();
     value newLine = "\n";
     Files.lines(Paths.get(file)).forEachOrdered((line) => content.append(line.string).append(newLine));
-    return content.string;
+    return content.string.trimmed;
 }
